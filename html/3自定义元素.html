@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+
+<script src="../react/react.js"></script>
+<script>
+    var HelloMessage = React.createClass({
+        getInitialState: function() {
+            return {type: 'say:'};
+        },
+        componentWillMount: function() {
+            console.log('我就要开始渲染了。。。')
+        },
+        componentDidMount: function() {
+            console.log('我已经渲染好了。。。')
+        },
+        render: function() {
+            return React.createElement("div", null,this.state.type, "Hello ", this.props.name);
+        }
+    });
+    var virtualDom=React.createElement(HelloMessage, {name: "John"});
+    React.render(virtualDom, document.getElementById("container"));
+</script>
+</body>
+</html>

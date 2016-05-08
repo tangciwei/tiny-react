@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+
+<script src="../react/react.js"></script>
+<script>
+    function hello(){
+        alert('hello')
+    }
+    //虚拟dom
+    var eleson=React.createElement('p',{id:'pp'},'pp')
+    var element = React.createElement('div',{id:'test',onclick:hello},'clickme',eleson)
+    React.render(element,document.getElementById("container"))
+</script>
+</body>
+</html>
